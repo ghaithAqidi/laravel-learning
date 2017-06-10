@@ -4,7 +4,7 @@
     <title></title>
 </head>
 <body>
-<h1>WELCOME TO OUR SIMPLE WEBSITE, CARS AND TASKS SO FAR!</h1>
+<h1>{{ $car->price }}</h1>
 </body>
 
 </html>
