@@ -41,13 +41,17 @@ Route::get('/tasks/{task}', function($id){
 Route::get('/cars','CarsController@index');
 Route::get('/cars/{car}','CarsController@show');
 
-//a new example using layout.blade.php
-Route::get('/newExample', 'PostsController@index');
 /***
- * In order for the above example to work we need the following:
+ * In order for the below example to work we need the following:
  * 1. controller -> PostsController (plural) with a function named index
  * 2. Eloquent model -> Post
  * 3. migration -> create_posts_table
  */
+Route::get('/newExample', 'PostsController@index');
+
+Route::get('/posts/create','PostsController@create');
+
+Route::post('/posts','PostsController@store');
+
 
 
