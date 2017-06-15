@@ -14,10 +14,8 @@ class CarsController extends Controller
         return view('cars.index', compact('cars'));
     }
 
-    public function show($id){
-        //get data from Car model.
-        $car = Car::find($id);
-        //send data to view:
+    public function show(Car $car){
+        //send data to view directly from the parameter.
         return view('cars.show', compact('car'));
     }
 
