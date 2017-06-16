@@ -21,11 +21,22 @@
 
             <div class="form-group row">
                 <div class="offset-sm-2 col-sm-10">
-                    <button type="submit" class="btn btn-primary">Public post</button>
+                    <button type="submit" class="btn btn-primary" >Public post</button>
                 </div>
             </div>
         </form>
     </div>
+
+    @if (count($errors))
+    <div class="alert alert-error">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{$error}}</li>
+            @endforeach
+        </ul>
+
+    </div>
+    @endif
 
 @endsection
 

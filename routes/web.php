@@ -47,11 +47,13 @@ Route::get('/cars/{car}','CarsController@show');
  * 2. Eloquent model -> Post
  * 3. migration -> create_posts_table
  */
-Route::get('/newExample', 'PostsController@index');
+
+Route::get('/posts','PostsController@index');
 
 Route::get('/posts/create','PostsController@create');
 
 Route::post('/posts','PostsController@store');
+
 
 
 

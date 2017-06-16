@@ -8,7 +8,8 @@ use Illuminate\Http\Request;
 class PostsController extends Controller
 {
     public function index(){
-        return view('posts.index');
+        $posts = Post::all();
+        return view('posts.index', compact('posts'));
     }
 
     public function create(){
@@ -23,6 +24,11 @@ class PostsController extends Controller
      * 3.redirect to the home page.
      */
     public function store(){
+        $this->validate(request(),[
+           'title' => 'required',
+            'body' => 'required'
+        ]);
+
         //1.create a new post with request data
         $post = new Post();
         $post->title = request('title');
