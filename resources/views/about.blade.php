@@ -1,7 +1,10 @@
-<html>
-<body>
+@extends('layouts.layout')
 
-<p>welcome</p>
-</body>
+@include('layouts.nav')
 
-</html>
+@section('content')
+    <div class="col-sm-8 blog-main">
+        about page
+    </div>
+@endsection
+

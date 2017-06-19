@@ -3,7 +3,10 @@
 @include('layouts.nav')
 
 @section('content')
+
     <div class="col-sm-8 blog-main">
+        <a href="/posts/create">Create New Post</a>
+
         @foreach($posts as $post)
             <div class="blog-post">
                 <h2 class="blog-post-title">
