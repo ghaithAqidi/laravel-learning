@@ -6,7 +6,11 @@
     <div class="col-sm-8 blog-main">
         @foreach($posts as $post)
             <div class="blog-post">
-                <h2 class="blog-post-title">{{$post -> title}}</h2>
+                <h2 class="blog-post-title">
+                    <a href="/posts/{{$post -> id}}">
+                    {{$post -> title}}
+                    </a>
+                </h2>
                 <!-- example of the use of the carbon library
                 http://carbon.nesbot.com/docs/#api-getters
                 -->

@@ -38,6 +38,11 @@ class PostsController extends Controller
         //3.redirect to homepage.
         return redirect('/');
     }
+    
+    public function show($id){
+            $post = Post::find($id);
+            return view('posts.show', compact('post'));
+    }
 }
 
 

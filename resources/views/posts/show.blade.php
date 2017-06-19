@@ -1,7 +1,11 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: GhaithAli
- * Date: 16/06/2017
- * Time: 22.01
- */
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<h1>{{ $post->title }}</h1>
+<p>{{ $post -> body }}</p>
+</body>
+
+</html>
