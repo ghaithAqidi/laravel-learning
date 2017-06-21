@@ -13,7 +13,7 @@
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
 
 
 Route::get('/about', function () {
@@ -59,3 +59,14 @@ Route::get('/posts/{post}', 'PostsController@show');
 //for comments:
 
 Route::post('/posts/{post}/comments', 'CommentsController@store');
+
+//authentication
+
+Route::get('/register', 'RegistrationController@create');
+
+Route::post('/register', 'RegistrationController@store');
+
+Route::get('/login','SessionsController@create')->name('login');
+
+Route::get('/logout','SessionsController@destroy');
+

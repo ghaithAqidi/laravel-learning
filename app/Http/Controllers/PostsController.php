@@ -7,9 +7,21 @@ use Illuminate\Http\Request;
 
 class PostsController extends Controller
 {
+    public function __construct()
+    {
+        //this means that anyone can see the index and show, but only authenticated user can see the rest.
+        $this->middleware('auth')->except(['index','show']);
+    }
+
+
     public function index(){
         $posts = Post::all();
         return view('posts.index', compact('posts'));
+    }
+
+    public function show($id){
+        $post = Post::find($id);
+        return view('posts.show', compact('post'));
     }
 
     public function create(){
@@ -23,6 +35,7 @@ class PostsController extends Controller
      * 2.save the post to the database.
      * 3.redirect to the home page.
      */
+
     public function store(){
         $this->validate(request(),[
            'title' => 'required',
@@ -33,16 +46,10 @@ class PostsController extends Controller
         $post = new Post();
         $post->title = request('title');
         $post->body = request('body');
+        $post->user_id = auth()->user()->id;
         //2.save post to db
         $post->save();
         //3.redirect to homepage.
-        return redirect('/');
-    }
-    
-    public function show($id){
-            $post = Post::find($id);
-            return view('posts.show', compact('post'));
+        return redirect('/posts');
     }
 }
-
-

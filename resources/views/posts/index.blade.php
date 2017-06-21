@@ -17,7 +17,11 @@
                 <!-- example of the use of the carbon library
                 http://carbon.nesbot.com/docs/#api-getters
                 -->
-                <p class="blog-post-meta">{{$post -> created_at->toFormattedDateString() }}</p>
+                <p class="blog-post-meta">
+                    <!-- the post->user returns the user the post belongsTo  -->
+                    {{$post->user->name}} On
+                    {{$post -> created_at->toFormattedDateString() }}
+                </p>
                 {{$post -> body}}
             </div>
         @endforeach

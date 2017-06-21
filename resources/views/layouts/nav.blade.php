@@ -1,3 +1,5 @@
+
+
 <nav class="navbar navbar-default">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -14,6 +16,11 @@
                 <li><a href="/">Home</a></li>
                 <li><a href="/about">About</a></li>
                 <li><a href="/posts">Posts</a></li>
+                @if (Auth::check())
+                    <li class="ml-auto"><a href="/posts">{{Auth::user()->name}}</a></li>
+                @endif
+
+
             </ul>
         </div><!--/.nav-collapse -->
     </div><!--/.container-fluid -->
